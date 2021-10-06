@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  loans:
+    image: com.learning/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8686:8686"com.
+    networks:
+      - mslearning-network
+
+  cards:
+    image: com.learning/cards:latest
+    mem_limit: 700m
+    ports:
+      - "8787:8787"
+    networks:
+      - mslearning-network
+
+  accounts:
+    image: mslearning/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8585:8585"
+    networks:
+      - mslearning-network
+
+networks:
+  mslearning-network:
